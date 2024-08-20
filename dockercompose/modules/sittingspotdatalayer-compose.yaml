@@ -1,0 +1,20 @@
+services:
+  postgressittingspotdl:
+    image: postgres:14-alpine
+    volumes:
+      - ~/apps/postgres_sittingspotdl:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: psw
+      POSTGRES_USER: root
+      POSTGRES_DB: sittingspots
+  sittingspotdatalayer:
+    image: sittingspotapp/sittingspotdatalayer:1.4-dev
+    depends_on:
+      - postgressittingspotdl
+    environment:
+      HIBERNATE_DDL: create-drop
+      POSTGRES_ADDRESS: jdbc:postgresql://postgressittingspotdl:5432/sittingspots
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: psw
+    ports:
+      - 8088:8080

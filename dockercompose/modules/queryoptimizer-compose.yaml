@@ -1,0 +1,7 @@
+services:
+  queryoptimizer:
+    image: sittingspotapp/queryoptimizer:1.6-dev
+    environment:
+      QUERY_DL_URL: querydatalayer:8080/api/v1
+    ports:
+      - 8082:8080

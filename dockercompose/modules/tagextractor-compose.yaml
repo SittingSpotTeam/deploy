@@ -1,0 +1,7 @@
+services:
+  tagextractor:
+    image: sittingspotapp/tagextractor:1.1-dev
+    environment:
+      SITTING_SPOT_DL_URL: sittingspotdatalayer:8080/api/v1
+    ports:
+      - 8089:8080

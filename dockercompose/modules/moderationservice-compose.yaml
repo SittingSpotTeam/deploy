@@ -1,0 +1,5 @@
+services:
+  moderationservice:
+    image: sittingspotapp/moderationservice:1.1-dev
+    ports:
+      - 8080:8080

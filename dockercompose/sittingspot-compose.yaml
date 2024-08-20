@@ -1,0 +1,11 @@
+include:
+  - modules/moderationservice-compose.yaml
+  - modules/querydatalayer-compose.yaml
+  - modules/queryoptimizer-compose.yaml
+  - modules/reviewdatalayer-compose.yaml
+  - modules/searchadapter-compose.yaml
+  - modules/searchprocesslayer-compose.yaml
+  - modules/searchservice-compose.yaml
+  - modules/sittingspotdatalayer-compose.yaml
+  - modules/tagextractor-compose.yaml
+  - modules/reviewprocesslayer-compose.yaml

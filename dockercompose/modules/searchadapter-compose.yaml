@@ -1,0 +1,8 @@
+services:
+  searchadapter:
+    image: sittingspotapp/searchadapter:1.5-dev
+    environment:
+      SITTING_SPOT_DL_URL: sittingspotdatalayer:8080/api/v1
+      OSM_ENDPOINT: https://overpass-api.de/api/interpreter
+    ports:
+      - 8085:8080

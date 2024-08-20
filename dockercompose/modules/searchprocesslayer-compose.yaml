@@ -1,0 +1,8 @@
+services:
+  searchprocesslayer:
+    image: sittingspotapp/searchprocesslayer:1.4-dev
+    environment:
+      QUERY_DL_URL: querydatalayer:8080/api/v1
+      SEARCH_LOGIC_URL: searchservice:8080/api/v1
+    ports:
+      - 8086:8080

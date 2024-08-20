@@ -1,0 +1,20 @@
+services:
+  postgresquerydl:
+    image: postgres:14-alpine
+    volumes:
+      - ~/apps/postgres_querydl:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: psw
+      POSTGRES_USER: root
+      POSTGRES_DB: sittingspots
+  querydatalayer:
+    image: sittingspotapp/querydatalayer:1.7-dev
+    depends_on:
+      - postgresquerydl
+    environment:
+      HIBERNATE_DDL: create-drop
+      POSTGRES_ADDRESS: jdbc:postgresql://postgresquerydl:5432/sittingspots
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: psw
+    ports:
+      - 8090:8080
