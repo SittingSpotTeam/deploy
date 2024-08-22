@@ -9,3 +9,4 @@ include:
   - modules/sittingspotdatalayer-compose.yaml
   - modules/tagextractor-compose.yaml
   - modules/reviewprocesslayer-compose.yaml
+  - modules/sittingspotterbot-compose.yaml

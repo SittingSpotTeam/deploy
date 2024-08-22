@@ -1,0 +1,3 @@
+services:
+  sittingspotterbot:
+    image: sittingspotapp/sittingspotterbot:0.2-dev
